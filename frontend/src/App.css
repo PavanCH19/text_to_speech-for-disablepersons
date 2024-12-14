@@ -1,0 +1,158 @@
+/* Global Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  /* Changed font for modern look */
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+  color: #333;
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+}
+
+/* Home Page Styling */
+.home {
+  padding: 50px 20px;
+  background-image: url('https://www.w3schools.com/w3images/forest.jpg');
+  /* Background Image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  color: white;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+/* Overlay for the background image */
+.home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark transparent overlay */
+  z-index: 1;
+}
+
+/* Welcome Heading */
+.home h2 {
+  font-size: 3em;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6);
+  /* Darker shadow for better contrast */
+  z-index: 2;
+  position: relative;
+}
+
+/* Card Container Styling */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 50px;
+  padding: 20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Individual Card Styling */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  /* Smoother corners */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  /* Enhanced shadow */
+  padding: 30px;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect for Cards */
+.card:hover {
+  transform: translateY(-15px);
+  /* Slightly stronger lift */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  /* Deeper shadow on hover */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Card Title Styling */
+.card h3 {
+  font-size: 1.8em;
+  color: #0073e6;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  /* Light text shadow for better readability */
+}
+
+/* Button Styling */
+.card-btn {
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  /* Rounded corners for buttons */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Hover Effect */
+.card-btn:hover {
+  background-color: #005bb5;
+  transform: translateY(-3px);
+  /* Button lifting effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* Stronger shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .card-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .home h2 {
+    font-size: 2.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .home h2 {
+    font-size: 2.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .home h2 {
+    font-size: 1.8em;
+  }
+
+  .card-btn {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
+}
